@@ -1,0 +1,5 @@
+model,features,target,train_period,test_period,MAE,RMSE,R2
+Linear Regression,Year,Yearly averaged SIE,1978-2011,2012-2025,0.2083645120170348,0.2419211873045379,-0.02499090472636145
+Linear Regression,"Year, Month",Monthly averaged SIE for each year,1978-2011,2012-2025,2.1808971714695016,2.610417471637942,0.4338773239433915
+Linear Regression,"Year, Month, Lags",Monthly averaged SIE for each year,1980-2011,2012-2025,0.2840172055801048,0.38597079969389864,0.9876234524341628
+Linear Regression,"Year, Month, Lags, Rolling Yearly Average, Time Index",Monthly averaged SIE for each year,1981-2011,2012-2025,0.28715445058368044,0.3865895159290696,0.9875837410958257
