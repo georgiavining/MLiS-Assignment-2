@@ -1,6 +1,5 @@
 ## To-do
 
-- Clean up lm.ipynb code
 - Random forest regressor, gradient boosted trees, etc in non-lm.ipynb
 - Add more data features and perform data analyses
 - Use RFR etc again
