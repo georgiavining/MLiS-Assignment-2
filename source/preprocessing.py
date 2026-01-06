@@ -65,4 +65,26 @@ def merge_temperature_data(SIE_df, temp_df, temp_columns: list, temp_column_name
     
     return merged_df
 
+def merge_co2_data(SIE_df, co2_df, co2_column_name="CO2 Concentration"):
+    merge_keys = ["Year"]
+
+    co2_df = co2_df.rename(columns={
+        "year": "Year",
+        "month": "Month",   
+        "average": co2_column_name,
+        "mean": co2_column_name
+    })
+
+    merge_keys = ["Year"]
+    if "Month" in co2_df.columns and "Month" in SIE_df.columns:
+        merge_keys.append("Month")
+
+    merged_df = SIE_df.merge(
+        co2_df[merge_keys + [co2_column_name]],
+        on=merge_keys,
+        how="inner"
+    )
+
+    merged_df = merged_df.dropna().reset_index(drop=True)
+    return merged_df
 
