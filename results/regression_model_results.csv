@@ -1,6 +1,11 @@
 model,features,target,train_period,test_period,MAE,RMSE,R2
-Linear Regression,Year,Yearly averaged SIE,1978-2011,2012-2025,0.2083645120170348,0.2419211873045379,-0.02499090472636145
-Linear Regression,"Year, Month",Monthly averaged SIE for each year,1978-2011,2012-2025,2.1808971714695016,2.610417471637942,0.4338773239433915
-Linear Regression,"Year, Month, Lags",Monthly averaged SIE for each year,1980-2011,2012-2025,0.2840172055801048,0.38597079969389864,0.9876234524341628
-Linear Regression,"Year, Month, Lags, Northern Hemisphere Temperature Anomaly",Monthly averaged SIE for each year,1980-2011,2012-2025,0.2833555134830227,0.3843897256804391,0.9877976962929572
-Linear Regression,"Year, Month, Lags, Northern Hemisphere Temperature Anomaly, Global CO2 Concentration",Monthly averaged SIE for each year,1980-2011,2012-2025,0.31881569041377006,0.42200035427597715,0.9853605526286242
+Linear Regression,Year,Yearly averaged SIE,1978-2011,2012-2025,0.2083645120170622,0.24192118730474046,-0.02499090472807808
+Linear Regression,"Year, Month",Monthly averaged SIE for each year,1978-2011,2012-2025,2.18089717147176,2.6104174716384017,0.433877323943192
+Linear Regression,"Year, Month, Lags",Monthly averaged SIE for each year,1980-2011,2012-2025,0.28401720556050636,0.3859707996720303,0.9876234524355654
+Linear Regression,"Year, Month, Lags, Northern Hemisphere Temperature Anomaly",Monthly averaged SIE for each year,1980-2011,2012-2025,0.28335551351890587,0.3843897257177004,0.9877976962905916
+Linear Regression,"Year, Month, Lags, Northern Hemisphere Temperature Anomaly, Global CO2 Concentration",Monthly averaged SIE for each year,1980-2011,2012-2025,0.3188156871537209,0.42200035085578225,0.9853605528659215
+Linear Regression,Year,Yearly averaged SIE,1978-2011,2012-2025,0.2083645120170622,0.24192118730474046,-0.02499090472807808
+Linear Regression,"Year, Month",Monthly averaged SIE for each year,1978-2011,2012-2025,2.18089717147176,2.6104174716384017,0.433877323943192
+Linear Regression,"Year, Month, Lags",Monthly averaged SIE for each year,1980-2011,2012-2025,0.28401720556050636,0.3859707996720303,0.9876234524355654
+Linear Regression,"Year, Month, Lags, Northern Hemisphere Temperature Anomaly",Monthly averaged SIE for each year,1980-2011,2012-2025,0.28335551351890587,0.3843897257177004,0.9877976962905916
+Linear Regression,"Year, Month, Lags, Northern Hemisphere Temperature Anomaly, Global CO2 Concentration",Monthly averaged SIE for each year,1980-2011,2012-2025,0.3188156871537209,0.42200035085578225,0.9853605528659215

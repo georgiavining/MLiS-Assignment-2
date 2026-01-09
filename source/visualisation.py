@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
+import numpy as np
 
 def plot_xy(
     x,
@@ -19,10 +19,12 @@ def plot_xy(
     elif plot_type == "scatter":
         plt.scatter(x,y)
         if regression_line:
-            X = x.values.reshape(-1, 1)
-            model = LinearRegression()
-            y_regression = model.fit(X, y.values).predict(X)
-            plt.plot(x, y_regression, color='red', linewidth=2)
+            x = np.array(x).reshape(-1, 1)
+            y = np.array(y).reshape(-1, 1)
+            x_regression = np.hstack((np.ones((x.shape[0], 1)), x))
+            beta = np.linalg.inv(x_regression.T @ x_regression) @ x_regression.T @ y
+            y_pred = x_regression @ beta
+            plt.plot(x, y_pred, color='red', linewidth=2)
 
     elif plot_type == "bar":
         plt.bar(x,y)
