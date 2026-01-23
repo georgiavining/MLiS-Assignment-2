@@ -115,3 +115,25 @@ def merge_co2_data(SIE_df, co2_df, co2_column_name="CO2 Concentration"):
     merged_df = merged_df.dropna().reset_index(drop=True)
     return merged_df
 
+def validation_split(X, y, val_ratio=0.2):
+    n_samples = X.shape[0]
+    n_val = int(n_samples * val_ratio)
+
+    X_train = X[:-n_val]
+    y_train = y[:-n_val]
+
+    X_val = X[-n_val:]
+    y_val = y[-n_val:]
+
+    return X_train, y_train, X_val, y_val
+
+def standardise_features(X_train, X_val, X_test):
+    mean = X_train.mean(axis=0)
+    std = X_train.std(axis=0)
+
+    X_train_std = (X_train - mean) / std
+    X_val_std = (X_val - mean) / std
+    X_test_std = (X_test - mean) / std
+
+
+    return X_train_std, X_val_std, X_test_std

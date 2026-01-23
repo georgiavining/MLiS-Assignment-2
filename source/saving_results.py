@@ -8,7 +8,7 @@ def save_results_to_csv(y_test, y_pred, model_name: str, features: str, target: 
     rmse = sqrt(mse)
     r2 = 1 - (sum((y_test - y_pred)**2) / sum((y_test - y_test.mean())**2))
 
-    print(f"mae = {mae}, rmse={rmse}, r2= {r2}")
+    print(f"mse = {mse}, mae = {mae}, rmse={rmse}, r2= {r2}")
 
     results = {
         "model": model_name,
@@ -16,6 +16,7 @@ def save_results_to_csv(y_test, y_pred, model_name: str, features: str, target: 
         "target": target,
         "train_period": train_period,
         "test_period": test_period,
+        "MSE": mse,
         "MAE": mae,
         "RMSE": rmse,
         "R2": r2
