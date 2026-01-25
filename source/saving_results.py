@@ -29,7 +29,36 @@ def save_results_to_csv(y_test, y_pred, model_name: str, features: str, target: 
     project_root = Path(__file__).resolve().parents[1]
     results_dir = project_root / "results"
     results_dir.mkdir(exist_ok=True)
-    results_path = results_dir / "regression_model_results.csv"
+    results_path = results_dir / "SIE_prediction.csv"
+
+    #converting it into a csv file
+    results_df.to_csv(
+        results_path,
+        mode = "a",
+        header=not results_path.exists(),
+        index=False
+    )
+
+def save_results_to_csv_year(y_pred, model_name: str, features: str, target: str, train_period: str):
+
+    print(f"Predicted first ice-free year: {y_pred}")
+
+    results = {
+        "model": model_name,
+        "features": features,
+        "target": target,
+        "train_period": train_period,
+        "prediction": y_pred
+    }
+
+
+    #adding results dictionary to a new data frame so that i can easily compare models throughout
+    results_df = pd.DataFrame([results])
+
+    project_root = Path(__file__).resolve().parents[1]
+    results_dir = project_root / "results"
+    results_dir.mkdir(exist_ok=True)
+    results_path = results_dir / "first_ice_free_year.csv"
 
     #converting it into a csv file
     results_df.to_csv(

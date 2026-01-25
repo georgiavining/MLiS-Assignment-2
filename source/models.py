@@ -1,6 +1,6 @@
 import numpy as np
 
-def linear_regression(X_train, y_train, X_test, y_test):
+def linear_regression(X_train, y_train, X_test):
     
     #design matrix X
     X = np.hstack((np.ones((X_train.shape[0], 1)), X_train))
@@ -12,7 +12,10 @@ def linear_regression(X_train, y_train, X_test, y_test):
     beta = np.linalg.inv(X.T @ X) @ X.T @ y
 
     #predictions on test set
-    X_test_design = np.hstack((np.ones((X_test.shape[0], 1)), X_test))
+    if isinstance(X_test, int):
+        X_test_design = np.array([[1, X_test]])
+    else:
+        X_test_design = np.hstack((np.ones((X_test.shape[0], 1)), X_test))
     y_pred = X_test_design @ beta
 
     return y_pred.flatten()
@@ -125,3 +128,10 @@ def find_best_regularisation_parameter(X_train, y_train, X_val, y_val, lambda_va
             best_lambda = lambda_
 
     return best_lambda
+
+def linear_regression_year_prediction(X_train, y_train, future_years):
+    y_preds = {}
+    for year in future_years:
+        y_preds[year] = linear_regression(X_train, y_train, year).item()
+    first_ice_free_year = min(year for year, pred in y_preds.items() if pred <= 1)
+    return first_ice_free_year, y_preds

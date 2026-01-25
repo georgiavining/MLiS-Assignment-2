@@ -1,0 +1,3 @@
+Model,Features,Target,Train Period,Predicted First Ice-Free Year
+Linear Regression,Year,Yearly SIE,1978-2011,2202
+Linear Regression,Year,Yearly SIE,1978-2025,2207
