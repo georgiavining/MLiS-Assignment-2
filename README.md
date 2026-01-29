@@ -3,7 +3,8 @@
 ```
 SeaIce-Extent-Prediction-ML/
 ├─ data/
-|  ├─ c02_annmean_gl.csv              #Global marine surface CO2 concentration 
+|  ├─ c02_annmean_gl.csv   #Global marine surface CO2 concentration (annual)
+|  ├─ c02_mm_gl.csv        #Global marine surface CO2 concentration (monthly)
 |  ├─ N_seaice_extent_dailyv4.0.csv   #North sea-ice extent 
 |  └─ NH.Ts+dSST.csv                  #North land-ocean surface temperature anamolies
 ├─ notebooks/            
